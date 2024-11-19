@@ -47,7 +47,7 @@ Livraison du projet dans les 24 heures à compter du début du brief.
 
 ## Modalités d'évaluation
 
-- Correction entre pairs à l'aide d'une grille d'évaluation.
+- Présentation devant les pairs.
 
 ## Livrables
 
@@ -55,9 +55,6 @@ Livraison du projet dans les 24 heures à compter du début du brief.
 
 ## Critères de performance
 
-
-
-**Nombre d'étoiles obtenues** : ⭐⭐⭐⭐⭐
 
 ## Ressources
 
