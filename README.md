@@ -66,3 +66,4 @@ Livraison du projet dans les 24 heures à compter du début du brief.
 ## Auteurs, contributeurs
 
 - [Nicolas Herbez](https://github.com/nicolas-herbez)
+- [Rémy Cottrez](https://github.com/RemyCTRZ)
