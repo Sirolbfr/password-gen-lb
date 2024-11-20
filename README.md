@@ -51,7 +51,7 @@ Livraison du projet dans les 24 heures à compter du début du brief.
 
 ## Livrables
 
-- Un dépôt GitHub.
+- Le lien vers votre dépôt `GitHub` avec un dernier commit lorsque tout fonctionne "finished"
 
 ## Critères de performance
 
