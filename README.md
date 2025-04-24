@@ -43,11 +43,11 @@ Exemples dans le dossier `models`.
 
 ### Deadline
 
-Livraison du projet dans les 24 heures à compter du début du brief.
+2 jours.
 
 ## Modalités d'évaluation
 
-- Présentation devant les pairs.
+- Correction par le formateur.
 
 ## Livrables
 
