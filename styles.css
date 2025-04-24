@@ -1,0 +1,157 @@
+:root {
+    --main : #4232ced8;
+    --accent: #fff;
+    --bg: #ddd;
+
+    --brd_rad: 12px;
+
+    --min_wdh: 450px;
+    --max_wdh: 550px;
+}
+
+body {
+    background: url(https://images.pexels.com/photos/6985132/pexels-photo-6985132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+
+    & #first_cont {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 50%;
+        min-width: var(--min_wdh);
+        max-width: var(--max_wdh);
+        
+        & #len {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100px;
+            background-color: var(--main);
+            border-radius: var(--brd_rad);
+
+            & h1 {
+                margin: 0;
+                text-align: center;
+                color: var(--accent);
+                font-size: 25px;
+                padding: 2px 0;
+            }
+
+            & #in_sub {
+                display: flex;
+                height: 70%;
+                background-color: var(--bg);
+                border-radius: var(--brd_rad);
+                justify-content: space-around;
+        
+                & input {
+                    padding: 4px 5px;
+                    border-radius: var(--brd_rad);
+                    height: 80%;
+                    width: 69%;
+                    align-self: center;
+                    border: none;
+                }
+
+                & button {
+                    color: var(--accent);
+                    background-color: var(--main);
+                    padding: 4px 5px;
+                    border-radius: var(--brd_rad);
+                    height: 80%;
+                    width: 25%;
+                    align-self: center;
+                }
+            }
+        }
+
+        & #choice {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100px;
+            background-color: var(--main);
+            border-radius: var(--brd_rad);
+
+            & h1 {
+                margin: 0;
+                text-align: center;
+                color: var(--accent);
+                font-size: 20px;
+            }
+
+            & #checkboxes {
+                position: absolute;
+                bottom: 0;
+                display: flex;
+                width: 100%;
+                height: 70%;
+                justify-content: space-around;
+                align-items: center;
+                background-color: var(--bg);
+                border-radius: var(--brd_rad);
+            }
+        }
+    }
+
+    & #output {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--main);
+        border-radius: var(--brd_rad);
+        width: 50%;
+        min-width: var(--min_wdh);
+        max-width: var(--max_wdh);
+
+        & h1 {
+            color: var(--accent);
+            font-size: 25px;
+        }
+        
+        & #display_cont {
+            display: flex;
+            background-color: var(--bg);
+            border-radius: var(--brd_rad);
+            min-height: 50px;
+            width: 100%;
+            justify-content: space-around;
+
+            & #display {
+                padding: 4px 5px;
+                border-radius: var(--brd_rad);
+                background-color: var(--accent);
+                height: 80%;
+                width: 85%;
+                text-align: center;
+                text-wrap: wrap;
+                align-self: center;
+            }
+
+            & button {
+                padding: 4px 5px;
+                border-radius: var(--brd_rad);
+                background-color: var(--accent);
+                height: 80%;
+                align-self: center;
+            }
+        }
+    }
+}
+
+
+/* ------------- Breakpoint ------------- */
+
+@media screen and (min-width: 1200px) {
+    body {
+        flex-direction: row;
+    }
+}
