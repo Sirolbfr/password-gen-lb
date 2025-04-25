@@ -102,47 +102,121 @@ body {
         }
     }
 
-    & #output {
-        text-align: center;
+    & #second_cont {
         display: flex;
         flex-direction: column;
-        background-color: var(--main);
-        border-radius: var(--brd_rad);
+        gap: 15px;
         width: 50%;
         min-width: var(--min_wdh);
         max-width: var(--max_wdh);
 
-        & h1 {
-            color: var(--accent);
-            font-size: 25px;
-        }
-        
-        & #display_cont {
+        & #output {
+            text-align: center;
             display: flex;
-            background-color: var(--bg);
+            flex-direction: column;
+            background-color: var(--main);
             border-radius: var(--brd_rad);
-            min-height: 50px;
-            width: 100%;
-            justify-content: space-around;
-
-            & #display {
-                padding: 4px 5px;
-                border-radius: var(--brd_rad);
-                background-color: var(--accent);
-                height: 80%;
-                width: 85%;
-                text-align: center;
-                text-wrap: wrap;
-                align-self: center;
-                overflow-x: auto;
+    
+            & h1 {
+                color: var(--accent);
+                font-size: 25px;
             }
-
-            & button {
-                padding: 4px 5px;
+            
+            & #display_cont {
+                display: flex;
+                background-color: var(--bg);
                 border-radius: var(--brd_rad);
-                background-color: var(--accent);
-                height: 80%;
-                align-self: center;
+                min-height: 50px;
+                width: 100%;
+                justify-content: space-around;
+    
+                & #display {
+                    padding: 4px 5px;
+                    border-radius: var(--brd_rad);
+                    background-color: var(--accent);
+                    height: 80%;
+                    width: 85%;
+                    text-align: center;
+                    text-wrap: wrap;
+                    align-self: center;
+                    overflow-x: auto;
+                }
+    
+                & button {
+                    padding: 4px 5px;
+                    border-radius: var(--brd_rad);
+                    background-color: var(--accent);
+                    height: 80%;
+                    align-self: center;
+                }
+            }
+        }
+    
+        & #strength {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--main);
+            border-radius: var(--brd_rad);
+    
+            & h1 {
+                color: var(--accent);
+                font-size: 25px;
+            }
+    
+            & #sub_cont {
+                display: grid;
+                grid-template: 40% 5% 55% / 25% 75%;
+                color: white;
+    
+                & #man_input {
+                    align-self: center;
+                }
+    
+                & input {
+                    margin-right: 10px;
+                    border-radius: var(--brd_rad);
+                    border: none;
+                }
+    
+                & #levels {
+                    display: flex;
+                    background-color: var(--bg);
+                    border-radius: var(--brd_rad);
+                    min-height: 50px;
+                    width: 100%;
+                    justify-content: space-around;
+                    align-items: center;
+                    gap: 1px;
+                    grid-row-start: 3;
+                    grid-column-end: span 2;
+        
+                    & button {
+                        color: var(--accent);
+                        background-color: var(--main);
+                        padding: 4px 5px;
+                        border-radius: var(--brd_rad);
+                        height: 80%;
+                        width: 25%;
+                        align-self: center;
+                    }
+        
+                    & #lvl_bar {
+                        display: flex;
+
+                        & .lvl {
+                            width: 60px;
+                            height: 15px;
+                            background-color: var(--accent);
+                            border-radius: var(--brd_rad);
+                        }
+                    }
+    
+                    & p {
+                        color: black;
+                        margin-right: 2%;
+                    }
+                }
             }
         }
     }
