@@ -174,7 +174,6 @@ function store_pswrd() {
     for (let i=3; i>=0; i--) {
         if (localStorage.getItem(i.toString())!=null) {
             localStorage.setItem((i+1).toString(), localStorage.getItem(i.toString()));
-
         }
     }
     localStorage.setItem("0", new_pswrd);
