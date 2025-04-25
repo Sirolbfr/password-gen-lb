@@ -19,6 +19,8 @@ const clr_decent = "rgb(255, 159, 10)";
 const clr_strong = "rgb(131, 210, 100)";
 const clr_v_strong = "rgb(52, 199, 89)";
 
+const recent_list = document.getElementById("recent_list");
+
 
 /* -------- Main -------- */
 
@@ -33,14 +35,11 @@ function selection() {
     return selected;
 }
 
-
-
 function pswrd_gen() {
     let res = "";
     let input_length = Number(input.value);
     let cp_btn = document.getElementById("cp_btn");
     if (cp_btn!=undefined) {cp_btn.remove();}
-
 
     if (selection().length>0) {
         if (input_length < Number(input.min)) {res = 'Nombre de caractères trop bas (12-128)';}
@@ -61,6 +60,7 @@ function pswrd_gen() {
     } else {res = 'Veuillez cocher au moins une des cases de la partie 2.';}
     
     display.innerHTML = res.toString();
+    store_pswrd();
 }
 
 function copy() {
@@ -75,6 +75,10 @@ function copy() {
 input.onkeydown = function(key){
     if(key.keyCode == 13){pswrd_gen();}
 };
+
+document.getElementById("pass").addEventListener("keypress", function(event){
+    if(event.key == "Enter"){strength_verify();}
+});
 
 
 /* --------- Password Strength Test --------- */
@@ -155,3 +159,44 @@ function strength_verify() {
         strength_verify();
     }
 }
+
+
+/* --------- Storing Recent Passwords --------- */
+
+function store_pswrd() {
+    let new_pswrd = display.innerHTML;
+    let li_elts = document.querySelectorAll(".li_elt");
+
+    if (localStorage.getItem("4")!=null) {
+        localStorage.removeItem("4");
+        li_elts[4].remove();
+    }
+    for (let i=3; i>=0; i--) {
+        if (localStorage.getItem(i.toString())!=null) {
+            localStorage.setItem((i+1).toString(), localStorage.getItem(i.toString()));
+
+            if (li_elts[i+1]==undefined) {
+                let li = document.createElement("li");
+                li.className = "li_elt";
+            } else {li_elts[i+1].innerHTML = li_elts[i].innerHTML;}
+        }
+    }
+    localStorage.setItem("0", new_pswrd);
+    let li = document.createElement("li");
+    li.innerHTML = new_pswrd;
+    li.className = "li_elt";
+    recent_list.prepend(li);
+}
+
+function init_display_recent() {
+    for (let i=0; i<5; i++) {
+        if (localStorage.getItem(i.toString())!=undefined) {
+            let li = document.createElement("li");
+            li.innerHTML = localStorage.getItem(i.toString());
+            li.className = "li_elt";
+            recent_list.appendChild(li);
+        }
+    }
+}
+
+window.onload = init_display_recent();

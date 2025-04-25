@@ -14,7 +14,7 @@ body {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    gap: 3%;
+    gap: 15px;
     align-items: center;
     justify-content: center;
     font-family: sans-serif;
@@ -158,6 +158,7 @@ body {
             flex-direction: column;
             background-color: var(--main);
             border-radius: var(--brd_rad);
+            min-height: 120px;
     
             & h1 {
                 color: var(--accent);
@@ -217,6 +218,25 @@ body {
                         margin-right: 2%;
                     }
                 }
+            }
+        }
+
+        & #recent {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--main);
+            border-radius: var(--brd_rad);
+
+            & h1 {
+                color: var(--accent);
+                font-size: 25px;
+            }
+
+            & ul {
+                padding: 10px 0;
+                background-color: var(--bg);
+                border-radius: var(--brd_rad);
             }
         }
     }

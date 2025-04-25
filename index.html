@@ -43,7 +43,7 @@
             <section id="strength">
                 <h1>4. Force du mot de passe:</h1>
                 <div id="sub_cont">
-                    <p id="man_input">Input manuel :</p>  <!-- On peut mettre le mot de passe qu'on veut, pas forcément celui qu'on vient de générer -->
+                    <p id="man_input">Input manuel :</p> <!-- On peut mettre le mot de passe qu'on veut, pas forcément celui qu'on vient de générer -->
                     <input type="text" id="pass">
                     <div id="levels">
                         <button type="submit" onclick="strength_verify()">Vérifier</button> <!-- Si #man_input est vide, prends le mot de passe généré automatiquement-->
@@ -56,6 +56,10 @@
                         <p id="lvl_txt">Force</p>
                     </div>
                 </div>
+            </section>
+            <section id="recent">
+                <h1>5. Mots de passe récents</h1>
+                <ul id="recent_list"></ul>
             </section>
         </section>
     </body>
