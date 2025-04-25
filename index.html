@@ -11,15 +11,15 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=content_copy" />
     </head>
     <body>
-        <div id="first_cont">
-            <div id="len">
+        <section id="first_cont">
+            <section id="len">
                 <h1>1. Longueur du mot de passe:</h1>
                 <div id="in_sub">
                     <input type="number" id="input" min="12" max="128" placeholder="Longueur">
                     <button type="submit" id="submit" onclick="pswrd_gen()">Générer</button>
                 </div>
-            </div>
-            <div id="choice">
+            </section>
+            <section id="choice">
                 <h1>2. Choix des caractères:</h1>
                 <div id="checkboxes">
                     <input type="checkbox" id="ckbox_upp" checked>
@@ -31,14 +31,33 @@
                     <input type="checkbox" id="ckbox_spe" checked>
                     <label for="ckbox_spe">Car.Spéciaux</label>
                 </div>
-            </div>
-        </div>
-        <div id="output">
-            <h1>3. Output:</h1>
-            <div id="display_cont">
-                <div id="display"></div>
-            </div>
-        </div>
+            </section>
+        </section>
+        <section id="second_cont">
+            <section id="output">
+                <h1>3. Output:</h1>
+                <div id="display_cont">
+                    <div id="display"></div>
+                </div>
+            </section>
+            <section id="strength">
+                <h1>4. Force du mot de passe:</h1>
+                <div id="sub_cont">
+                    <p id="man_input">Input manuel :</p>  <!-- On peut mettre le mot de passe qu'on veut, pas forcément celui qu'on vient de générer -->
+                    <input type="text" id="pass">
+                    <div id="levels">
+                        <button type="submit" onclick="strength_verify()">Vérifier</button> <!-- Si #man_input est vide, prends le mot de passe généré automatiquement-->
+                        <div id="lvl_bar">
+                            <div class="lvl" id="weak"></div>
+                            <div class="lvl" id="decent"></div>
+                            <div class="lvl" id="strong"></div>
+                            <div class="lvl" id="very_strong"></div>
+                        </div>
+                        <p id="lvl_txt">Force</p>
+                    </div>
+                </div>
+            </section>
+        </section>
     </body>
     <script type="text/javascript" src="script.js"></script>
 </html>

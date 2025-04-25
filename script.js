@@ -13,6 +13,12 @@ const spe = document.getElementById("ckbox_spe");
 const input = document.getElementById("input");
 const display = document.getElementById("display");
 
+const var_accent = getComputedStyle(document.body).getPropertyValue('--accent');
+const clr_weak = "rgb(255, 69, 58)";
+const clr_decent = "rgb(255, 159, 10)";
+const clr_strong = "rgb(131, 210, 100)";
+const clr_v_strong = "rgb(52, 199, 89)";
+
 
 /* -------- Main -------- */
 
@@ -37,8 +43,8 @@ function pswrd_gen() {
 
 
     if (selection().length>0) {
-        if (input_length < Number(input.min)) {res = 'Nombre de caractères trop bas';}
-        else if (input_length > Number(input.max)) {res = 'Nombre de caractères trop haut';}
+        if (input_length < Number(input.min)) {res = 'Nombre de caractères trop bas (12-128)';}
+        else if (input_length > Number(input.max)) {res = 'Nombre de caractères trop haut (12-128)';}
         else {
             for (let i=0; i<input_length; i++) {
                 let rndm = Math.floor(Math.random()* selection().length);
@@ -69,3 +75,83 @@ function copy() {
 input.onkeydown = function(key){
     if(key.keyCode == 13){pswrd_gen();}
 };
+
+
+/* --------- Password Strength Test --------- */
+
+function str_score(pswrd) {
+    let score = 0;
+
+    for (let i=0; i<uppercase.length; i++) {
+        if (pswrd.includes(uppercase.charAt(i))) {
+            score++;
+            break;
+        }
+    }
+
+    for (let j=0; j<lowercase.length; j++) {
+        if (pswrd.includes(lowercase.charAt(j))) {
+            score++;
+            break;
+        }
+    }
+
+    for (let k=0; k<digits.length; k++) {
+        if (pswrd.includes(digits.charAt(k))) {
+            score++;
+            break;
+        }
+    }
+
+    for (let l=0; l<special.length; l++) {
+        if (pswrd.includes(special.charAt(l))) {
+            score++;
+            break;
+        }
+    }
+
+    return score;
+}
+
+function strength_verify() {
+    const pass = document.getElementById("pass");
+    const lvl_bar = document.querySelectorAll(".lvl");
+    const lvl_txt = document.getElementById("lvl_txt");
+
+    if (str_score(pass.value) == 1) {
+        lvl_bar[0].style.backgroundColor = clr_weak;
+        lvl_bar[1].style.backgroundColor = var_accent;
+        lvl_bar[2].style.backgroundColor = var_accent;
+        lvl_bar[3].style.backgroundColor = var_accent;
+        lvl_txt.innerHTML = "Faible";
+        lvl_txt.style.color = clr_weak;
+    }
+    else if (str_score(pass.value) == 2) {
+        lvl_bar[0].style.backgroundColor = clr_decent;
+        lvl_bar[1].style.backgroundColor = clr_decent;
+        lvl_bar[2].style.backgroundColor = var_accent;
+        lvl_bar[3].style.backgroundColor = var_accent;
+        lvl_txt.innerHTML = "Moyen";
+        lvl_txt.style.color = clr_decent;
+    }
+    else if (str_score(pass.value) == 3) {
+        lvl_bar[0].style.backgroundColor = clr_strong;
+        lvl_bar[1].style.backgroundColor = clr_strong;
+        lvl_bar[2].style.backgroundColor = clr_strong;
+        lvl_bar[3].style.backgroundColor = var_accent;
+        lvl_txt.innerHTML = "Fort";
+        lvl_txt.style.color = clr_strong;
+    }
+    else if (str_score(pass.value) == 4) {
+        lvl_bar[0].style.backgroundColor = clr_v_strong;
+        lvl_bar[1].style.backgroundColor = clr_v_strong;
+        lvl_bar[2].style.backgroundColor = clr_v_strong;
+        lvl_bar[3].style.backgroundColor = clr_v_strong;
+        lvl_txt.innerHTML = "Très Fort";
+        lvl_txt.style.color = clr_v_strong;
+    }
+    else {
+        pass.value = display.innerHTML;
+        strength_verify();
+    }
+}
