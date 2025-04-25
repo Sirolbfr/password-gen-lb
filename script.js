@@ -69,3 +69,41 @@ function copy() {
 input.onkeydown = function(key){
     if(key.keyCode == 13){pswrd_gen();}
 };
+
+
+/* --------- Password Strength Test --------- */
+
+function strength(pswrd) {
+    let score = 0;
+
+    for (let i=0; i<uppercase.length; i++) {
+        if (pswrd.includes(uppercase.charAt(i))) {
+            score++;
+            break;
+        }
+    }
+
+    for (let j=0; j<lowercase.length; j++) {
+        if (pswrd.includes(lowercase.charAt(j))) {
+            score++;
+            break;
+        }
+    }
+
+    for (let k=0; k<digits.length; k++) {
+        if (pswrd.includes(digits.charAt(k))) {
+            score++;
+            break;
+        }
+    }
+
+    for (let l=0; l<special.length; l++) {
+        if (pswrd.includes(special.charAt(l))) {
+            score++;
+            break;
+        }
+    }
+
+    return score;
+}
+
