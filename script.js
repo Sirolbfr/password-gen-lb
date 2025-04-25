@@ -175,10 +175,6 @@ function store_pswrd() {
         if (localStorage.getItem(i.toString())!=null) {
             localStorage.setItem((i+1).toString(), localStorage.getItem(i.toString()));
 
-            // if (li_elts[i+1]==undefined) {
-            //     let li = document.createElement("li");
-            //     li.className = "li_elt";
-            // } else {li_elts[i+1].innerHTML = li_elts[i].innerHTML;}
         }
     }
     localStorage.setItem("0", new_pswrd);
