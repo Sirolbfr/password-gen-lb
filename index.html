@@ -22,14 +22,22 @@
             <section id="choice">
                 <h1>2. Choix des caractères:</h1>
                 <div id="checkboxes">
-                    <input type="checkbox" id="ckbox_upp" checked>
-                    <label for="ckbox_upp">Majuscules</label>
-                    <input type="checkbox" id="ckbox_low" checked>
-                    <label for="ckbox_low">Minuscules</label>
-                    <input type="checkbox" id="ckbox_dig" checked>
-                    <label for="ckbox_dig">Chiffres</label>
-                    <input type="checkbox" id="ckbox_spe" checked>
-                    <label for="ckbox_spe">Car.Spéciaux</label>
+                    <div class="ckbox_cont">
+                        <input type="checkbox" id="ckbox_upp" checked>
+                        <label for="ckbox_upp">Majuscules</label>
+                    </div>
+                    <div class="ckbox_cont">
+                        <input type="checkbox" id="ckbox_low" checked>
+                        <label for="ckbox_low">Minuscules</label>
+                    </div>
+                    <div class="ckbox_cont">
+                        <input type="checkbox" id="ckbox_dig" checked>
+                        <label for="ckbox_dig">Chiffres</label>
+                    </div>
+                    <div class="ckbox_cont">
+                        <input type="checkbox" id="ckbox_spe" checked>
+                        <label for="ckbox_spe">Car.Spéciaux</label>
+                    </div>
                 </div>
             </section>
         </section>
@@ -43,7 +51,7 @@
             <section id="strength">
                 <h1>4. Force du mot de passe:</h1>
                 <div id="sub_cont">
-                    <p id="man_input">Input manuel :</p> <!-- On peut mettre le mot de passe qu'on veut, pas forcément celui qu'on vient de générer -->
+                    <p id="man_input">Input manuel:</p> <!-- On peut mettre le mot de passe qu'on veut, pas forcément celui qu'on vient de générer -->
                     <input type="text" id="pass">
                     <div id="levels">
                         <button type="submit" onclick="strength_verify()">Vérifier</button> <!-- Si #man_input est vide, prends le mot de passe généré automatiquement-->

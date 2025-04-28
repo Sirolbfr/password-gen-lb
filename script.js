@@ -13,7 +13,7 @@ const spe = document.getElementById("ckbox_spe");
 const input = document.getElementById("input");
 const display = document.getElementById("display");
 
-const var_accent = getComputedStyle(document.body).getPropertyValue('--accent');
+const clr_accent = getComputedStyle(document.body).getPropertyValue('--accent');
 const clr_weak = "rgb(255, 69, 58)";
 const clr_decent = "rgb(255, 159, 10)";
 const clr_strong = "rgb(131, 210, 100)";
@@ -124,17 +124,17 @@ function strength_verify() {
 
     if (str_score(pass.value) == 1) {
         lvl_bar[0].style.backgroundColor = clr_weak;
-        lvl_bar[1].style.backgroundColor = var_accent;
-        lvl_bar[2].style.backgroundColor = var_accent;
-        lvl_bar[3].style.backgroundColor = var_accent;
+        lvl_bar[1].style.backgroundColor = clr_accent;
+        lvl_bar[2].style.backgroundColor = clr_accent;
+        lvl_bar[3].style.backgroundColor = clr_accent;
         lvl_txt.innerHTML = "Faible";
         lvl_txt.style.color = clr_weak;
     }
     else if (str_score(pass.value) == 2) {
         lvl_bar[0].style.backgroundColor = clr_decent;
         lvl_bar[1].style.backgroundColor = clr_decent;
-        lvl_bar[2].style.backgroundColor = var_accent;
-        lvl_bar[3].style.backgroundColor = var_accent;
+        lvl_bar[2].style.backgroundColor = clr_accent;
+        lvl_bar[3].style.backgroundColor = clr_accent;
         lvl_txt.innerHTML = "Moyen";
         lvl_txt.style.color = clr_decent;
     }
@@ -142,7 +142,7 @@ function strength_verify() {
         lvl_bar[0].style.backgroundColor = clr_strong;
         lvl_bar[1].style.backgroundColor = clr_strong;
         lvl_bar[2].style.backgroundColor = clr_strong;
-        lvl_bar[3].style.backgroundColor = var_accent;
+        lvl_bar[3].style.backgroundColor = clr_accent;
         lvl_txt.innerHTML = "Fort";
         lvl_txt.style.color = clr_strong;
     }
